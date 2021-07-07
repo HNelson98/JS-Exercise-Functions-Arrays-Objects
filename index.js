@@ -39,8 +39,13 @@ function addNumbers(num1, num2) {
  *   email: "leia@leia.com",
  * }
 */
-function makePersonObject(/* code here */) {
-  /* code here */
+function makePersonObject(/* code here */id, name, email,) {
+  /* code here */var person ={
+    id: id,
+    name: name,
+    email: email,
+  };
+  return person;
 }
 
 /**
@@ -56,8 +61,8 @@ function makePersonObject(/* code here */) {
  * passing { id: 1, name: 'Leia', email: 'leia@leia.com` } as the argument,
  * the returned value should look like `Hello, my name is Leia`.
 */
-function getName(/* code here */) {
-  /* code here */
+function getName(name) {
+  return 'Hello, my name is ' + name
 }
 
 /**
@@ -73,8 +78,15 @@ function getName(/* code here */) {
  *         and returns a string like `Hello, my name is {name}`.
  *         where `{name}` is the name passed into `makeSmartPerson`.
 */
-function makeSmartPerson(/* code here */) {
-  /* code here */
+function makeSmartPerson(name) {
+
+var smartPerson = {
+    sum: function(num1, num2){
+     return num1 + num2;
+   },
+   speak : function(){ 
+    return 'Hello, my name is' + this.name
+  }
 }
 
 
@@ -137,6 +149,7 @@ function get3rdCar(inventory) {
 */
 function getCarInfoByIndex(inventory, index) {
   /* code here */
+  return 'This is a ' + inventory[index] ;
 }
 
 /**
@@ -150,10 +163,9 @@ function getCarInfoByIndex(inventory, index) {
  * For example, if getLastCarInfo is invoked passing the inventory inside /data/inventory.js,
  * it will return `This is a Lincoln Town Car`.
 */
-function getLastCarInfo(/* code here */) {
-  /* code here */
+function getLastCarInfo(inventory) {
+  return "this is a " + inventory
 }
-
 /**
  * ### Challenge `getCarInfoById`
  * 
@@ -166,8 +178,8 @@ function getLastCarInfo(/* code here */) {
  * For example, if getCarInfoById is invoked with the inventory and the number 1,
  * it will return `This is a Lincoln Navigator`.
 */
-function getCarInfoById(/* code here */) {
-  /* code here */
+function getCarInfoById(inventory, id) {
+  return "This is a " + inventory[id]
 }
 
 /**
@@ -178,8 +190,8 @@ function getCarInfoById(/* code here */) {
  *     (1) an array which is an inventory of cars like the one inside /data/inventory.js.
  * sortCarInventory returns an inventory that is sorted by car_model, ascending [A-Z].
 */
-function sortCarInventory(/* code here */) {
-  /* code here */
+function sortCarInventory(inventory) {
+  return inventory.sort()
 }
 
 /**
@@ -191,8 +203,8 @@ function sortCarInventory(/* code here */) {
  *     (1) an array which is an inventory of cars like the one inside /data/inventory.js.
  * getModelYears returns an array containing all the 'car_year's in the inventory.
 */
-function getModelYears(/* code here */) {
-  /* code here */
+function getModelYears(inventory) {
+  return inventory[car_year]
 }
 
 /**
@@ -207,8 +219,8 @@ function getModelYears(/* code here */) {
  * with a `car_year` which is at most the given desired max year,
  * in the same order as they appear in the original inventory.
 */
-function getOlderCars(/* code here */) {
-  /* code here */
+function getOlderCars(inventory, maxYear) {
+  
 }
 
 /**
@@ -236,11 +248,23 @@ function getGermanCars(/* code here */) {
  *   return a + b
  * }
  * 
+ * const sum(a, b) => {
+ * return a + b
+ * } 
+ * 
  * const addFive = function(num) {
+*    return num + 5
+ * }
+ * 
+ *  const addFive(num) => {
 *    return num + 5
  * }
  *
  * const argTimesTwo = function (num) {
+ *   return num * 2
+ * }
+ * 
+ * const argTimesTwo(num) => {
  *   return num * 2
  * }
 */
@@ -287,4 +311,4 @@ if (typeof exports !== 'undefined') {
   if (sum) { module.exports.sum = sum }
   if (addFive) { module.exports.addFive = addFive }
   if (argTimesTwo) { module.exports.argTimesTwo = argTimesTwo }
-}
+}}
